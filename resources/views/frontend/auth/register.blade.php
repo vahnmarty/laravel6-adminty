@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.bs4')
 
 @section('title', app_name() . ' | ' . __('labels.frontend.auth.register_box_title'))
 
