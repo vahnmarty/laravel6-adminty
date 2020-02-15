@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>{{ config('app.name') }} | @yield('title', 'BizSmart Teach') </title>
+    <title>{{ config('app.name') }} | @yield('title', 'x') </title>
 
     <!--[if lt IE 10]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') }}"></script>
@@ -29,44 +29,31 @@
     
 
 </head>
-    <body>
+    <body data-url="{{ url('/') }}">
         @include('backend.includes._theme-loader')
         @include('backend.includes._network-checker')
         <div id="pcoded" class="pcoded">
             <div class="pcoded-overlay-box"></div>
             <div class="pcoded-container navbar-wrapper">
-                <nav class="bg-light pt-3 pb-2">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <p class="text-dark">
-                                    <img src="{{ url('img/logo1.png') }}" height="30px">
-                                </p>
-                            </div>
-                            <div class="col text-right">
-                                <a href="{{ url('login') }}" class="btn btn-round btn-primary btn-sm mr-3">Login</a>
-                                <a href="{{ url('register') }}" class="btn btn-round btn-primary btn-sm">Register</a>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-                <div class="pcoded-main-container bg-white">
+                @include('backend.includes._submit-loader')
+                
+                @include('backend.includes.navbar')
+
+
+                <div class="pcoded-main-container">
                     <div class="pcoded-wrapper">
 
-                        <div class="pcoded-content ml-0">
-                            <div class="pcoded-inner-content">
-                                <div class="main-body pt-5">
+                        @include('backend.includes.sidebar')
 
-                                    <section>
-                                        <div class="container">
-                                            <div class="row justify-content-center">
-                                                <div class="col-lg-12">
-                                                    @yield('content')
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                                            
+                        <div class="pcoded-content">
+                            <div class="pcoded-inner-content">
+                                <div class="main-body">
+
+                                    @include('includes.partials.logged-in-as')
+                                    @include('includes.partials.messages')
+
+                                    @yield('content')
+                                    
                                     <div class="md-overlay"></div>
 
                                     <div id="styleSelector" class="d-none">
