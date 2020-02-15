@@ -39,9 +39,9 @@
                     <div class="container">
                         <div class="row">
                             <div class="col">
-                                <p class="text-dark">
+                                <a href="{{ url('/') }}">
                                     <img src="{{ url('img/logo1.png') }}" height="30px">
-                                </p>
+                                </a>
                             </div>
                             <div class="col text-right">
                                 <a href="{{ url('login') }}" class="btn btn-round btn-primary btn-sm mr-3">Login</a>
